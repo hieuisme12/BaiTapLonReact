@@ -177,7 +177,6 @@ export default function Home() {
                   price={food.price}
                   category={food.category}
                 />
-                //{" "}
               </TouchableOpacity>
             ))}
           </View>
