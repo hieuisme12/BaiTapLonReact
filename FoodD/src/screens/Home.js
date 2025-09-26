@@ -168,16 +168,14 @@ export default function Home() {
               </TouchableWithoutFeedback>
             </View>
             {foodSearch.map((food, index) => (
-              <TouchableOpacity onPress={() => handleOrder(food)}>
+              <TouchableOpacity key={index} onPress={() => handleOrder(food)}>
                 <RestaurantCard
-                  key={index}
                   name={food.name}
                   describe={food.describe}
                   img={images[Number(food.img)]} //<Image source={{ uri: `../assets/images/${food.img}` }} />
                   price={food.price}
                   category={food.category}
                 />
-                //{" "}
               </TouchableOpacity>
             ))}
           </View>
