@@ -9,16 +9,16 @@ export const TypeHTTP = {
   DELETE: "delete",
 };
 export const api = async ({ path, body, type }) => {
-  return new Promise((rejects, resolve) => {
+  return new Promise((resolve, reject) => {
     switch (type) {
       case TypeHTTP.GET:
         axios
           .get(path)
           .then((res) => {
-            rejects(res.data);
+            resolve(res.data);
           })
           .catch((res) => {
-            resolve({
+            reject({
               status: res.response?.status,
               message: res.response?.data,
             });
@@ -28,10 +28,10 @@ export const api = async ({ path, body, type }) => {
         axios
           .post(path, body)
           .then((res) => {
-            rejects(res.data);
+            resolve(res.data);
           })
           .catch((res) => {
-            resolve({
+            reject({
               status: res.response?.status,
               message: res.response?.data,
             });
@@ -41,10 +41,10 @@ export const api = async ({ path, body, type }) => {
         axios
           .put(path, body)
           .then((res) => {
-            rejects(res.data);
+            resolve(res.data);
           })
           .catch((res) => {
-            resolve({
+            reject({
               status: res.response?.status,
               message: res.response?.data,
             });
@@ -54,10 +54,10 @@ export const api = async ({ path, body, type }) => {
         axios
           .delete(path)
           .then((res) => {
-            rejects(res.data);
+            resolve(res.data);
           })
           .catch((res) => {
-            resolve({
+            reject({
               status: res.response?.status,
               message: res.response?.data,
             });
