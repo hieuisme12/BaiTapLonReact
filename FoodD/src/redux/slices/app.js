@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    slidebar:{
+    sidebar:{
         open : false,
         type : "CONTACT",
     }
@@ -11,7 +11,7 @@ const slice = createSlice({
     name: "app",
     initialState,
     reducers:{
-        toggleSlidebar(state, action){
+        toggleSidebar(state, action){
             state.sidebar.open = !state.sidebar.open;
         },
         updateSideBarType(state, action){
