@@ -9,6 +9,6 @@ export default function App() {
     <Provider store={store}>
       <MainNavigation />
       <StatusBar style="auto" />
-    </ Provider>
+    </Provider>
   );
 }
