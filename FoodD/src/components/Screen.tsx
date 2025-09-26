@@ -8,11 +8,11 @@ interface Props {
   styles?: object;
 }
 
-export default function Screen({ children, styles }: Props) {
-  return <View style={[style.screen, styles]}>{children}</View>;
+export default function Screen({ children, styles: customStyles }: Props) {
+  return <View style={[styles.screen, customStyles]}>{children}</View>;
 }
 
-const style = StyleSheet.create({
+const styles = StyleSheet.create({
   screen: {
     alignItems: "center",
     backgroundColor: COLORS.white,
